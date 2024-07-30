@@ -1,0 +1,7 @@
+{
+  "name": "phonix-broker",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

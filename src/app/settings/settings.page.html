@@ -1,0 +1,95 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Settings</ion-title>
+    <ion-title button slot="end" (click)="logOut()">Log Out</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">settings</ion-title>
+     
+    </ion-toolbar>
+  </ion-header>
+  <div class="main">
+    <div class="bg-img">
+      <img src="assets/dp.jpg">
+      <ion-icon button class="edit-icon" aria-hidden="true" name="brush" id="open-custom-dialog"></ion-icon>
+      <h6>Jane Doe</h6>
+      <p>janedoe001&#64;gmail.com</p>
+    </div>
+  </div>
+
+  <ion-accordion-group style="margin-top: 50px;">
+    <ion-title class="ion-padding" style="font-weight:bold ;">General Settings</ion-title>
+    <ion-accordion value="first">
+      <ion-item slot="header" color="light">
+        <ion-label>Profile Settings</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Edit Profile</div>
+      <div class="ion-padding" slot="content">Change Password</div>
+      <div class="ion-padding" slot="content">Language Preferences</div>
+      <div class="ion-padding" slot="content">Contact Preferences</div>
+    </ion-accordion>
+    <ion-accordion value="second">
+      <ion-item slot="header" color="light">
+        <ion-label>Notification Settings</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Push Notifications</div>
+      <div class="ion-padding" slot="content">Email Notifications</div>
+    </ion-accordion>
+    <ion-accordion value="third">
+      <ion-item slot="header" color="light">
+        <ion-label>Privacy Settings</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Privacy Policy</div>
+      <div class="ion-padding" slot="content">Activity Logs</div>
+    </ion-accordion>
+    <ion-accordion value="fourth">
+      <ion-item slot="header" color="light">
+        <ion-label>App preference</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Theme</div>
+      <div class="ion-padding" slot="content">Font Size</div>
+      <div class="ion-padding" slot="content">Notification Sounds</div>
+    </ion-accordion>
+    <ion-accordion value="fifth">
+      <ion-item slot="header" color="light">
+        <ion-label>Support and Feedback</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">Help Center</div>
+      <div class="ion-padding" slot="content">Contact Support</div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <ion-modal id="example-modal" #modal trigger="open-custom-dialog">
+    <ng-template>
+      <div class="wrapper">
+        <h1>Edit information</h1>
+
+        <ion-list>
+          <ion-list>
+            <ion-item>
+              <ion-input label="Name" placeholder="Enter text" value="Jane Doe"></ion-input>
+            </ion-item>
+        
+            <ion-item>
+              <ion-input label="Phone Number" type="text" value="+41 712345678"></ion-input>
+            </ion-item>
+        
+            <ion-item>
+              <ion-input label="Password input" type="password" value="password"></ion-input>
+            </ion-item>
+        
+            <ion-item>
+              <ion-input label="Email" type="email" value="janedoe001@gmail.com"></ion-input>
+            </ion-item>
+        
+         
+          </ion-list>
+        </ion-list>
+      </div>
+    </ng-template>
+  </ion-modal>
+</ion-content>

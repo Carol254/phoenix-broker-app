@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>contracts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">contracts</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-searchbar placeholder="Search Contracts"  [debounce]="1000" (ionInput)="onSearch($event)" [(ngModel)]="searchQuery" (ionClear)="onClear()"></ion-searchbar>
+
+
+<!-- <ion-grid>
+  <ion-row class="ion-justify-content-between">
+    <ion-col size="4">
+      <ion-label position="floating">Contract Name</ion-label>
+      <ion-input [(ngModel)]="newContract.name"></ion-input>
+    </ion-col>
+
+    <ion-col size="4">
+      <ion-label position="floating">Category</ion-label>
+      <ion-input [(ngModel)]="newContract.category"></ion-input>
+    </ion-col>
+
+    <ion-col size="4">
+      <ion-button (click)="addContract()">Add Contract</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid> -->
+
+  <ion-title class="ion-padding">Contract List</ion-title>
+
+  <ion-list  class="ion-padding">
+    @for(contract of contractList; track contract.id){
+      <ion-item>
+       <img src="assets/pdf-icon.png"> {{contract.name}}.pdf
+      </ion-item>
+    }
+  </ion-list>
+</ion-content>

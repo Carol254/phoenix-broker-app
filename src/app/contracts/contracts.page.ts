@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar,IonSearchbar, IonList, IonItem ,IonButton,IonLabel, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { IonContent, IonHeader, IonTitle, IonToolbar,IonSearchbar, IonList, IonItem ,IonButton,IonLabel, IonGrid, IonRow, IonCol, IonInput } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-contracts',
   templateUrl: './contracts.page.html',
   styleUrls: ['./contracts.page.scss'],
   standalone: true,
-  imports: [IonCol, IonRow, IonGrid, IonItem, IonList, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule ,IonSearchbar,IonButton,IonLabel]
+  imports: [IonInput, IonCol, IonRow, IonGrid, IonItem, IonList, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule ,IonSearchbar,IonButton,IonLabel]
 })
 export class ContractsPage  {
   contractList:any[] =[
@@ -124,6 +124,14 @@ export class ContractsPage  {
     this.originalContractList = [...this.originalContractList, newContract];
 
     this.newContract = { id: null, name: '', category: '' }; 
+  }
+
+  onFileChange(event:any){
+    const file = event.target.files[0];
+
+    if(file){
+      console.log(file);
+    }
   }
 
 }
